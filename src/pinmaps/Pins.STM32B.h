@@ -115,6 +115,7 @@
 #define Aux0                 LED
 #define Aux1              A1MISO
 #define Aux2              A2MISO
+#define Aux3              TONE
 
 // For ESP8266 control
 #define ESP8266Gpio0Pin     Aux1    // ESP8266 GPIO0 or SPI MISO/Fault

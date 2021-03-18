@@ -43,6 +43,9 @@
   #include "../drivers/NV_I2C_EEPROM_AT24C32.h"
 #elif defined(NV_MB85RC256V)
   #include "../drivers/NV_I2C_FRAM_MB85RC256V.h"
+#elif defined(NV_24LC16)
+  #define HAL_WIRE_CLOCK 100000
+  #include "../drivers/NV_I2C_EEPROM_24XX_C.h"
 #else
   #include "../drivers/NV_I2C_EEPROM_AT24C32_C.h"
 #endif
