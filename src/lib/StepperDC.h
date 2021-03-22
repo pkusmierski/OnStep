@@ -158,7 +158,8 @@ class stepperDC {
     }
 
     byte _phase=1;
-    bool _A4988=false;
+    bool _A4988=true;
+//    bool _A4988=false;
     int _power=0;
     bool _en=false;
     int _stepPin=-1;
