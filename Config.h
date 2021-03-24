@@ -22,7 +22,7 @@
 #define NV_24LC16 1
 // SERIAL PORTS ---------------------------------------------------- see https://onstep.groups.io/g/main/wiki/6-Configuration#SERIAL
 #define SERIAL_A_BAUD_DEFAULT        9600 //   9600, n. Where n=9600,19200,57600,115200 (common baud rates.)                  Infreq
-#define SERIAL_B_BAUD_DEFAULT        9600 //   9600, n. See (src/HAL/) for your MCU Serial port # etc.                        Option
+#define SERIAL_B_BAUD_DEFAULT       57600 //   9600, n. See (src/HAL/) for your MCU Serial port # etc.                        Option
 #define SERIAL_B_ESP_FLASHING        OFF //    OFF, ON Upload ESP8266 WiFi firmware through SERIAL_B with :ESPFLASH# cmd.    Option
 #define SERIAL_C_BAUD_DEFAULT        OFF //    OFF, n, ON for ESP32 Bluetooth.                                               Option
 #define SERIAL_C_BLUETOOTH_NAME  "OnStep" // "On..", Bluetooth device name for ESP32.                                         Option
@@ -168,9 +168,9 @@
 // see https://onstep.groups.io/g/main/wiki/6-Configuration#AXIS4
 #define FOCUSER1                      ON //    OFF, ON to enable this focuser.                                               Option
 // stepsPerMicro
-#define AXIS4_STEPS_PER_MICRON        0.01 //    0.5, n. Steps per micrometer. Figure this out by testing or other means.      Adjust
+#define AXIS4_STEPS_PER_MICRON        10 //    0.5, n. Steps per micrometer. Figure this out by testing or other means.      Adjust
 //#define AXIS4_SLEW_RATE_DESIRED       8 //    500, n, Where n=200..5000 (um/s.) Max microns/second. In DC mode, max pwr %   Adjust
-#define AXIS4_STEP_RATE_MAX           1000  // float maxRate
+#define AXIS4_STEP_RATE_MAX           100  // float maxRate
 
 #define AXIS4_DRIVER_MODEL            OFF //    OFF, TMC2130, TMC5160. Leave OFF for all drivers models except these.         Option
 #define AXIS4_DRIVER_MICROSTEPS       OFF //    OFF, n. Microstep mode when tracking.                   For TMC2130, TMC5160. Option
@@ -181,7 +181,7 @@
 #define AXIS4_DRIVER_DC_MODE          ON //    OFF, DRV8825 for pwm dc motor control on stepper driver outputs.              Option
 
 // double minRate
-#define AXIS4_LIMIT_MIN_RATE            100 //     50, n. Where n=1..1000 (um/s.) Minimum microns/second. In DC mode, min pwr.  Adjust
+#define AXIS4_LIMIT_MIN_RATE            50 //     50, n. Where n=1..1000 (um/s.) Minimum microns/second. In DC mode, min pwr.  Adjust
 // double min = AXIS4_LIMIT_MIN * 1000
 #define AXIS4_LIMIT_MIN                 0 //      0, n. Where n=0..500 (millimeters.) Minimum allowed position.               Adjust
 // double max = AXIS4_LIMIT_MAX * 1000

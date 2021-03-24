@@ -8,6 +8,7 @@
 
 #include "Focuser.h"
 #include "StepperDC.h"
+//#include 
 
 class focuserDC : public focuser  {
   public:
@@ -40,6 +41,7 @@ class focuserDC : public focuser  {
 
       nextPhysicalMove=millis()+(unsigned long)maxRate;
       lastPhysicalMove=nextPhysicalMove;
+      DebugSer.print("FocuserDC initialized\n\r");
     }
 
     // DC motor control
@@ -62,21 +64,32 @@ class focuserDC : public focuser  {
 
     // set movement rate in microns/second, from minRate to 1000
     void setMoveRate(double rate) {
+      char buf[64];
       constrain(rate,minRate,1000);
       moveRate=rate*spm;                            // in steps per second, for a DC motor a step is 1 micron.
       if (moveRate > spsMax) moveRate=spsMax;       // limit to maxRate
+      sprintf(buf, "Set MR mr %d = r %d * spm %d", int(moveRate), int(rate), int(spm));
+      DebugSer.println(buf);
     }
 
     // move in
     void startMoveIn() {
+      char buf[64];
       // rate is some fraction of 1 millimeter per second so this is the % power for 1 millimeter per second motion
-      dcMotor.setPower((moveRate/1000.0)*powerFor1mmSec);
+//      dcMotor.setPower((moveRate/1000.0)*powerFor1mmSec);
+      dcMotor.setPower(5);
+      sprintf(buf, "Set in mr %d power %d", int(moveRate), int((moveRate/1000.0)*powerFor1mmSec));
+      DebugSer.println(buf);
       delta.fixed=doubleToFixed(+moveRate/100.0);   // in steps per centi-second
     }
     
     // move out
     void startMoveOut() {
-      dcMotor.setPower((moveRate/1000.0)*powerFor1mmSec);
+      char buf[64];
+//      dcMotor.setPower((moveRate/1000.0)*powerFor1mmSec);
+      dcMotor.setPower(5);
+      sprintf(buf, "Set out mr %f power %d", moveRate, (moveRate/1000.0)*powerFor1mmSec);
+      DebugSer.println(buf);
       delta.fixed=doubleToFixed(-moveRate/100.0);   // in steps per centi-second
     }
 

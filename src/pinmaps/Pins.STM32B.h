@@ -169,9 +169,9 @@
 #define Axis3DirPin        F1DR     // Dir
 
 // Pins to focuser1 stepper driver
-#define Axis4_EN             PB14    // Enable
-#define Axis4DirPin          PB13    // Dir
-#define Axis4StepPin         PB12    // Step
+#define Axis4_EN             F1EN    // Enable
+#define Axis4DirPin          F1ST    // Dir
+#define Axis4StepPin         F1DR    // Step
 
 // For focuser2 stepper driver
 #define Axis5_EN             -1     // Enable
