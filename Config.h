@@ -172,8 +172,9 @@
 // AXIS4 FOCUSER 1
 // see https://onstep.groups.io/g/main/wiki/6-Configuration#AXIS4
 #define FOCUSER1                      ON //    OFF, ON to enable this focuser.                                               Option
-#define AXIS4_STEPS_PER_MICRON        0.5 //    0.5, n. Steps per micrometer. Figure this out by testing or other means.      Adjust
+#define AXIS4_STEPS_PER_MICRON        10 //    0.5, n. Steps per micrometer. Figure this out by testing or other means.      Adjust
 #define AXIS4_SLEW_RATE_DESIRED       100 //    500, n, Where n=200..5000 (um/s.) Max microns/second. In DC mode, max pwr %   Adjust
+//#define AXIS4_STEP_RATE_MAX         100
 
 #define AXIS4_DRIVER_MODEL            OFF //    OFF, TMC2130, TMC5160. Leave OFF for all drivers models except these.         Option
 #define AXIS4_DRIVER_MICROSTEPS       OFF //    OFF, n. Microstep mode when tracking.                   For TMC2130, TMC5160. Option
