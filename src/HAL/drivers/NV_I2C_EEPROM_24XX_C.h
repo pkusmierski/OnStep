@@ -12,7 +12,7 @@
 
 // I2C EEPROM Address
 #if !defined(I2C_EEPROM_ADDRESS)
-  #define I2C_EEPROM_ADDRESS 0x57
+  #define I2C_EEPROM_ADDRESS 0x50
 #endif
 
 // Time to wait after write page is requested, in milliseconds
@@ -21,7 +21,7 @@
 #endif
 
 #if !defined(E2END)
-  #define E2END 4095
+  #define E2END 2047
 #endif
 #define CACHE_SIZE ((E2END+1)/8)
 
