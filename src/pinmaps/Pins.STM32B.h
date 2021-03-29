@@ -36,9 +36,9 @@
 
 // The multi-purpose pins (Aux3..Aux8 can be analog pwm/dac if supported)
 #define Aux0                PC13    // Status LED
-#define Aux1                PB14    // ESP8266 GPIO0, SPI MISO/Fault
+#define Aux1                PA11    // ESP8266 GPIO0, SPI MISO/Fault
 #define Aux2                 PA1    // ESP8266 RST, SPI MISO/Fault
-#define Aux3                 PB8    // Reticle, Home SW
+#define Aux3                PB11    // Reticle, Home SW
 #define Aux4                PA13    // OneWire, Home SW
 
 #ifndef OneWirePin
@@ -49,49 +49,50 @@
 #define AddonBootModePin    Aux1    // ESP8266 GPIO0 or SPI MISO/Fault
 #define AddonResetPin       Aux2    // ESP8266 RST or SPI MISO/Fault
 
+// M2 - cs   M1 - sck   M0 - mosi - SDI
 // Axis1 RA/Azm step/dir driver
-#define Axis1_EN            PA12    // Enable
-#define Axis1_M0            PA11    // Microstep Mode 0
-#define Axis1_M0PORT       GPIOA
-#define Axis1_M0BIT  GPIO_PIN_11
-#define Axis1_M1             PA8    // Microstep Mode 1
-#define Axis1_M1PORT       GPIOA
-#define Axis1_M1BIT   GPIO_PIN_8
-#define Axis1_M2            PB15    // Microstep Mode 2
+#define Axis1_EN             PA8    // Enable
+#define Axis1_M0            PB15    // Microstep Mode 0
+#define Axis1_M0PORT       GPIOB
+#define Axis1_M0BIT  GPIO_PIN_15
+#define Axis1_M1            PB14    // Microstep Mode 1
+#define Axis1_M1PORT       GPIOB
+#define Axis1_M1BIT  GPIO_PIN_14
+#define Axis1_M2            PB13    // Microstep Mode 2
 #define Axis1_M2PORT       GPIOB
-#define Axis1_M2BIT  GPIO_PIN_15
-#define Axis1_M3            Aux1    // ESP8266 GPIO0 or SPI MISO/Fault
-#define Axis1_STEP          PB13    // Step
+#define Axis1_M2BIT  GPIO_PIN_13
+#define Axis1_M3             PB8    // ESP8266 GPIO0 or SPI MISO/Fault
+#define Axis1_STEP          PB12    // Step
 #define Axis1_StpPORT      GPIOB    //
-#define Axis1_StpBIT GPIO_PIN_13    //
-#define Axis1_DIR           PB12    // Motor Direction
+#define Axis1_StpBIT GPIO_PIN_12    //
+#define Axis1_DIR            PB0    // Motor Direction
 #define Axis1_DirPORT      GPIOB    //
-#define Axis1_DirBIT GPIO_PIN_12    //
+#define Axis1_DirBIT  GPIO_PIN_0    //
 #define Axis1_DECAY     Axis1_M2    // Decay mode
 #define Axis1_FAULT         Aux1    // ESP8266 GPIO0 or SPI MISO/Fault
 #define Axis1_HOME          Aux3    // Sense home position Axis1
 
 // Axis2 Dec/Alt step/dir driver
-#define Axis2_EN             PA5    // Enable
-#define Axis2_M0             PA4    // Microstep Mode 0
+#define Axis2_EN             PA7    // Enable
+#define Axis2_M0            PA15    // Microstep Mode 0
 #define Axis2_M0PORT       GPIOA
-#define Axis2_M0BIT   GPIO_PIN_4
-#define Axis2_M1             PA3    // Microstep Mode 1
-#define Axis2_M1PORT       GPIOA
+#define Axis2_M0BIT  GPIO_PIN_15
+#define Axis2_M1             PB3    // Microstep Mode 1
+#define Axis2_M1PORT       GPIOB
 #define Axis2_M1BIT   GPIO_PIN_3
-#define Axis2_M2             PA2    // Microstep Mode 2
-#define Axis2_M2PORT       GPIOA
-#define Axis2_M2BIT   GPIO_PIN_2
-#define Axis2_M3            Aux2    // ESP8266 RST or SPI MISO/Fault
-#define Axis2_STEP           PA0    // Step
-#define Axis2_StpPORT      GPIOA    //
-#define Axis2_StpBIT  GPIO_PIN_0    //
-#define Axis2_DIR           PC15    // Motor Direction
-#define Axis2_DirPORT      GPIOC    //
-#define Axis2_DirBIT GPIO_PIN_15    //
+#define Axis2_M2             PB4    // Microstep Mode 2
+#define Axis2_M2PORT       GPIOB
+#define Axis2_M2BIT   GPIO_PIN_4
+#define Axis2_M3             PB5    // ESP8266 RST or SPI MISO/Fault
+#define Axis2_STEP           PB5    // Step
+#define Axis2_StpPORT      GPIOB    //
+#define Axis2_StpBIT  GPIO_PIN_5    //
+#define Axis2_DIR            PB1    // Motor Direction
+#define Axis2_DirPORT      GPIOB    //
+#define Axis2_DirBIT  GPIO_PIN_1    //
 #define Axis2_DECAY     Axis2_M2    // Decay mode
-#define Axis2_FAULT         Aux2    // ESP8266 RST or SPI MISO/Fault
-#define Axis2_HOME          Aux4    // Sense home position Axis2
+#define Axis2_FAULT         Aux1    // ESP8266 RST or SPI MISO/Fault
+#define Axis2_HOME          Aux3    // Sense home position Axis2
 
 // ST4 interface
 #define ST4DEn               PA7    // ST4 DE+ North
@@ -117,9 +118,9 @@
 #define Axis3_DIR           PA15    // Dir
 
 // Pins to focuser1 stepper driver
-#define Axis4_EN             PB4    // Enable
-#define Axis4_STEP           PB3    // Step
-#define Axis4_DIR           PA15    // Dir
+#define Axis4_EN             PA6    // Enable
+#define Axis4_STEP           PA5    // Step
+#define Axis4_DIR            PA4    // Dir
 
 // For focuser2 stepper driver
 #define Axis5_EN             OFF    // Enable
