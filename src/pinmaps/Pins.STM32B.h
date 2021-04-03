@@ -38,8 +38,8 @@
 #define Aux0                PC13    // Status LED
 #define Aux1                PA11    // ESP8266 GPIO0, SPI MISO/Fault
 #define Aux2                 PA1    // ESP8266 RST, SPI MISO/Fault
-#define Aux3                PB11    // Reticle, Home SW
-#define Aux4                PA13    // OneWire, Home SW
+#define Aux3                PA3    // Reticle, Home SW
+#define Aux4                PA2    // OneWire, Home SW
 
 #ifndef OneWirePin
   #define OneWirePin        Aux4    // Default Pin for OneWire bus
